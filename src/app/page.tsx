@@ -1,7 +1,9 @@
+import PDFViewer from "@/components/PDFViewer";
+
 export default function Home() {
   return (
     <main>
-      sample page
+      <PDFViewer />
     </main>
   )
 }
