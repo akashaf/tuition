@@ -10,18 +10,19 @@
     "clean": "rm -rf .next && rm -rf node_modules && pnpm install"
   },
   "dependencies": {
-    "@mantine/core": "^7.4.1",
-    "@mantine/hooks": "^7.4.1",
+    "@mantine/core": "^7.5.0",
+    "@mantine/hooks": "^7.5.0",
     "@react-pdf-viewer/core": "3.12.0",
     "next": "14.0.2",
     "pdfjs-dist": "3.4.120",
+    "pnpm": "^8.15.0",
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
+    "@types/node": "^20.11.8",
+    "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.0.2",
     "postcss": "^8.4.33",
