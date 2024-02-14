@@ -8,7 +8,6 @@ import {
   MantineProvider,
   createTheme,
 } from "@mantine/core";
-import AppShell from "@/components/AppShell";
 
 const inter = Inter({ subsets: ["latin"] });
 

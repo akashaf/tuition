@@ -1,6 +1,5 @@
-import { supabase } from "@/utils/supabase";
-
 import Dashboard from "@/components/dashboard";
+import { supabase } from "@/utils/supabase";
 
 export default async function Home() {
   const { data } = await supabase.storage
@@ -10,7 +9,5 @@ export default async function Home() {
       offset: 0,
       sortBy: { column: "name", order: "asc" },
     });
-    
-
   return <Dashboard {...{data}} />;
 }
