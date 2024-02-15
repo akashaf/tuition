@@ -7,7 +7,7 @@ export default function ByUuid() {
   const router = useSearchParams();
   return (
     <PDFViewer
-      fileUrl={`https://qjrdgypcggkbyebgevgd.supabase.co/storage/v1/object/public/tuition/mathematic/form-5/${router.get(
+      fileUrl={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/tuition/mathematic/form-5/${router.get(
         "name"
       )}`}
     />
