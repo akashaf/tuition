@@ -30,7 +30,7 @@ export default function Dashboard({
                 fullWidth
                 mt="md"
                 radius="md"
-                onClick={() => router.push(`/pdf?name=${item.name}`)}
+                onClick={() => router.push(`/${item.name}`)}
               >
                 Navigate
               </Button>
