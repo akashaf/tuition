@@ -8,6 +8,7 @@ import {
   MantineProvider,
   createTheme,
 } from "@mantine/core";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,7 +45,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>{children}<Analytics /></MantineProvider>
       </body>
     </html>
   );
