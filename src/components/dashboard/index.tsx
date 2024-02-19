@@ -15,9 +15,15 @@ export default function Dashboard({
       <Space h="lg" />
       <Grid>
         {data?.map((item) => (
-          <Grid.Col key={item.id} span={3}>
+          <Grid.Col
+            key={item.id}
+            span={{
+              lg: 3,
+              sm: 6,
+            }}
+          >
             <Paper shadow="lg" radius="md" p="xl">
-              <Text>{item.name}</Text>
+              <Text fw="bold">{item.name}</Text>
 
               <Button
                 color="blue"
