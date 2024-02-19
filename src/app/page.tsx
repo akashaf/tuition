@@ -1,4 +1,5 @@
 import Dashboard from "@/components/dashboard";
+import Breadcrumbs from "@/components/header/Breadcrumb";
 import { supabase } from "@/utils/supabase";
 
 export default async function Home() {
@@ -9,5 +10,11 @@ export default async function Home() {
       offset: 0,
       sortBy: { column: "name", order: "asc" },
     });
-  return <Dashboard {...{data}} />;
+
+  return (
+    <>
+      <Breadcrumbs items={[{ title: "Dashboard", href: "#" }]} />
+      <Dashboard {...{ data }} />
+    </>
+  );
 }

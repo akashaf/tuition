@@ -4,7 +4,7 @@ import "@mantine/core/styles.css"; // import before globals.css
 import "./globals.css";
 import {
   ColorSchemeScript,
-  MantineColorsTuple,
+  Container,
   MantineProvider,
   createTheme,
 } from "@mantine/core";
@@ -22,30 +22,23 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const myColor: MantineColorsTuple = [
-    "#e5feee",
-    "#d2f9e0",
-    "#a8f1c0",
-    "#7aea9f",
-    "#53e383",
-    "#3bdf70",
-    "#2bdd66",
-    "#1ac455",
-    "#0caf49",
-    "#00963c",
-  ];
-  const theme = createTheme({
-    colors: {
-      myColor,
-    },
-  });
+  const theme = createTheme({});
   return (
     <html lang="en">
       <head>
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme}>{children}<Analytics /></MantineProvider>
+        <MantineProvider theme={theme}>
+          <Container
+            classNames={{
+              root: "p-4",
+            }}
+          >
+            {children}
+          </Container>
+          <Analytics />
+        </MantineProvider>
       </body>
     </html>
   );

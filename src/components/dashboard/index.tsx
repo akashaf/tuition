@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, Center, Grid } from "@mantine/core";
+import { Button, Grid, Paper, Space, Text, Title } from "@mantine/core";
 import { useRouter } from "next/navigation";
 
 export default function Dashboard({
@@ -10,20 +10,14 @@ export default function Dashboard({
 }) {
   const router = useRouter();
   return (
-    <Center h='100vh'>
+    <>
+      <Title order={1}>Mathematics</Title>
+      <Space h="lg" />
       <Grid>
         {data?.map((item) => (
           <Grid.Col key={item.id} span={3}>
-            <Card
-              shadow="sm"
-              padding="lg"
-              radius="md"
-              withBorder
-              classNames={{
-                section: "p-4 text-center cap font-bold text-lg",
-              }}
-            >
-              <Card.Section>{item.name}</Card.Section>
+            <Paper shadow="lg" radius="md" p="xl">
+              <Text>{item.name}</Text>
 
               <Button
                 color="blue"
@@ -32,12 +26,12 @@ export default function Dashboard({
                 radius="md"
                 onClick={() => router.push(`/${item.name}`)}
               >
-                Navigate
+                <Text>Navigate</Text>
               </Button>
-            </Card>
+            </Paper>
           </Grid.Col>
         ))}
       </Grid>
-    </Center>
+    </>
   );
 }
