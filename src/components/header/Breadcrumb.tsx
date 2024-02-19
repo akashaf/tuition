@@ -8,7 +8,11 @@ export default function Breadcrumbs({
 }) {
   return (
     <>
-      <$Breadcrumbs>
+      <$Breadcrumbs
+        classNames={{
+          root: "hidden lg:block lg:mt-12",
+        }}
+      >
         {items.map((item, index) => (
           <Anchor
             component={Link}
@@ -21,7 +25,7 @@ export default function Breadcrumbs({
           </Anchor>
         ))}
       </$Breadcrumbs>
-      <Space h="lg" />
+      <Space className="hidden lg:block" h="lg" />
     </>
   );
 }
