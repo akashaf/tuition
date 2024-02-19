@@ -4,11 +4,11 @@ import "@mantine/core/styles.css"; // import before globals.css
 import "./globals.css";
 import {
   ColorSchemeScript,
-  Container,
   MantineProvider,
   createTheme,
 } from "@mantine/core";
 import { Analytics } from "@vercel/analytics/react";
+import AppShell from "@/components/header/AppShell";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +30,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider theme={theme}>
-          <Container
-            classNames={{
-              root: "p-4",
-            }}
-          >
-            {children}
-          </Container>
+          <AppShell>{children}</AppShell>
           <Analytics />
         </MantineProvider>
       </body>
