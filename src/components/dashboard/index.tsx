@@ -11,7 +11,7 @@ export default function Dashboard({
   const router = useRouter();
   return (
     <>
-      <Title order={1}>Mathematics</Title>
+      <Title order={1} className="capitalize">Mathematics</Title>
       <Space h="lg" />
       <Grid>
         {data?.map((item) => (
@@ -23,7 +23,7 @@ export default function Dashboard({
             }}
           >
             <Paper shadow="lg" radius="md" p="xl">
-              <Text fw="bold">{item.name}</Text>
+              <Text fw="bold" tt='capitalize'>{item.name}</Text>
 
               <Button
                 color="blue"
