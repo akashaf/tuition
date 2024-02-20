@@ -10,7 +10,7 @@ export default function Breadcrumbs({
     <>
       <$Breadcrumbs
         classNames={{
-          root: "hidden lg:block lg:mt-12",
+          root: "hidden lg:flex lg:mt-12",
         }}
       >
         {items.map((item, index) => (
