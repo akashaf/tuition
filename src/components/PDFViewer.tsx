@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Worker, Viewer, SpecialZoomLevel } from "@react-pdf-viewer/core";
+import { Worker, Viewer, SpecialZoomLevel, PageLayout } from "@react-pdf-viewer/core";
 import {
   pageNavigationPlugin,
   RenderGoToPageProps,
@@ -19,6 +19,12 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ fileUrl }) => {
   const disableScrollPluginInstance = disableScrollPlugin();
   const pageNavigationPluginInstance = pageNavigationPlugin();
   const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
+  const pageLayout: PageLayout = {
+    transformSize: ({ size }) => ({
+        height: size.height + 30,
+        width: size.width + 30,
+    }),
+};
   return (
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
       <Box pos="relative">
@@ -42,14 +48,15 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ fileUrl }) => {
             )}
           </GoToNextPage>
         </Box>
-        <Box h="80vh">
+        <Box className="h-[40vh] md:h-[105vh] lg:h-[115vh] 2xl:h-[65vh]">
           <Viewer
+            pageLayout={pageLayout}
             plugins={[
               disableScrollPluginInstance,
               pageNavigationPluginInstance,
             ]}
             fileUrl={fileUrl}
-            defaultScale={SpecialZoomLevel.PageFit}
+            defaultScale={SpecialZoomLevel.PageWidth}
           />
         </Box>
       </Box>
